@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Visualizar - Meio ambiente</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3PXqLspcBi4gndnLI3t33F5opfXvBVCM&callback=initMap">
+    </script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/script2.js"></script>
+
+    <link rel="stylesheet" href="_css/estilo.css" ; />
+</head>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Visualização</h1>
+                <h2>Ver pontos onde há lixo</h2>
+            </hgroup>
+            <nav id="menu">
+                <ul>
+                    <li><a href="./index.html">Página Principal </a></li>
+                    <li><a href="./inserir.html">Inserção</a></li>
+                    <li><a href="./viewer.html">Visualização</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <div id='map' class='map'></div>
+            <form action="">
+                <fieldset id="usuario">
+                    <legend>Informações</legend>
+                    <p id="exibicaoRua" class='inativo'><label for="iLogradouro">Logradouro:</label><input readOnly='readOnly' type="text" name="nLogradouro" id="iLogradouro" size="20" maxlength="40" placeholder="Rua, Avenida, Alameda" /></p>
+                    <p id="exibicaoNum" class='inativo'><label for="iNum">Número:</label><input type="number" name="nNum" readOnly='readOnly' id="iNum" min="0" max="99999" /></p>
+                    <p id="exibicaoBairro" class='inativo'><label for="iBairro">Bairro:</label><input type="text" id="iBairro" name="nBairro" readOnly='readOnly' maxlength="40" size="20" placeholder="Centro" /></p>
+                    <p id="exibicaoCep" class='inativo'><label for="iCep">Cep:</label><input type="number" readOnly='readOnly' id="iCep" name="nCep" minlength='8' maxlength="8" size="10" placeholder="49400000" /></p>
+                    <p id="exibicaoCidade" class='inativo'><label for="iCidade">Cidade:</label><input type="text" readOnly='readOnly' id="iCidade" name="nCidade" maxlength="40" size="20" placeholder="Tobias Barreto" /></p>
+                    <p id="exibicaoEstado" class='inativo'><label for="iEstado">Estado:</label><input type="text" readOnly='readOnly' id="iEstado" name="nCidade" maxlength="40" size="20" placeholder="Sergipe" />
+
+                    </p>
+                </fieldset>
+                <fieldset class='inativo' id="exibicaoMensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p><label for="iMensagem">Mensagem:</label></p>
+                    <textarea readOnly='readOnly' id="iComentario" name="nTextArea" cols="80" rows="6" placeholder="Digite aqui sua mensagem">
+                    
+                    </textarea>
+                    <button type='button' id='edicao' onclick="habilitarEdicao()"> Habilitar Edição</button>
+                    <button class='inativo ' id='putchanges' type='button' onclick="putChanges()"> Editar</button>
+                    <button id='deleteButton' type='button' onclick="deleteRegister()"> Deletar</button>
+                </fieldset>
+                <fieldset class='inativo' id='exibicaoFoto'>
+                    <img id='preview' />
+                </fieldset>
+            </form>
+            <footer id="rodape">
+                <p>por Junior Santos Copyright &COPY; 2018</br>
+
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

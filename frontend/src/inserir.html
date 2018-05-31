@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Inserir Endereço - Meio ambiente</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3PXqLspcBi4gndnLI3t33F5opfXvBVCM&callback=initMap">
+    </script>
+    <script src="./js/script.js"></script>
+    <script src="./js/ajax.js"></script>
+    <link rel="stylesheet" href="_css/estilo.css" ; />
+</head>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Inserir</h1>
+                <h2>ponto de lixo</h2>
+            </hgroup>
+            <nav id="menu">
+                <ul>
+                    <li><a href="./index.html">Página Principal </a></li>
+                    <li><a href="./inserir.html">Inserção</a></li>
+                    <li><a href="./viewer.html">Visualização</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <h2 class='title'>Localização no mapa</h2>
+            <div id='map' class='map'></div>
+            <form id="upload">
+                <fieldset id="usuario">
+                    <legend>Informações</legend>
+                    <p><label for="iLogradouro">Logradouro:</label><input type="text" name="nLogradouro" id="iLogradouro" size="20" maxlength="40" placeholder="Rua, Avenida, Alameda" /></p>
+                    <p><label for="iNum">Número:</label><input type="number" name="nNum" id="iNum" min="0" max="99999" /></p>
+                    <p><label for="iBairro">Bairro:</label><input type="text" id="iBairro" name="nBairro" maxlength="40" size="20" placeholder="Centro" /></p>
+                    <p><label for="iCep">Cep:</label><input type="number" id="iCep" name="nCep" minlength='8' maxlength="8" size="10" placeholder="49400000" /></p>
+                    <p><label for="iCidade">Cidade:</label><input type="text" id="iCidade" name="nCidade" maxlength="40" size="20" placeholder="Lagarto " /></p>
+                    <p><label for="iEstado">Estado:</label>
+                        <select name="nEstado" id="iEstado">
+                            <optgroup label="Região Sudeste"><option value="RJ">Rio de Janeiro </option>
+                            <option value="SP">São Paulo</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="ES">Espirito Santo</option>
+                            </optgroup>
+                            <optgroup label="Região Norte"><option value="AC">Acre </option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="PA">Pará</option>
+                            <option value="RR">Roraima</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RO">Tocantins</option>
+                            </optgroup>
+                            
+                          
+                            <optgroup label="Região Nordeste">
+                            <option value="SE" selected>Sergipe</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="CE">Ceará</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RN">Rio grande do Norte</option>
+                            </optgroup>
+                            <optgroup label="Região Centro-Oeste">
+                            <option value="GO">Góias</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                </fieldset>
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p><label for="iMensagem">Mensagem:</label></p>
+                    <textarea id="iComentario" name="nTextArea" cols="80" rows="6" placeholder="Digite aqui sua mensagem">
+                    
+                    </textarea>
+
+                </fieldset>
+                <fieldset id='foto'>
+                    <legend>Enviar uma foto</legend>
+
+                    <input type="file" name="file" id="fotoInput" accept="image/*" />
+                    <div id='preview'>
+                        <img src="<?=$foto?>" id='fotopreview' />
+                    </div>
+                    <script src='./js/foto.js'></script>
+                </fieldset>
+                <input type="button" name="nEnviar" onclick='add(event)' id="iEnviar" value='Enviar' />
+            </form>
+
+
+            <footer id="rodape">
+                <p>por Junior Santos Copyright &COPY; 2018</br>
+
+                </p>
+            </footer>
+
+</body>
+
+</html>

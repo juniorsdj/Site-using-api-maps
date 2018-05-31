@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/loader.js",
+  "scripts": {
+    "dev": "nodemon",
+    "prod": "pm2 start src/loader.js --sga"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
+    "node-restful": "^0.2.6",
+    "nodemon": "^1.17.4",
+    "pm2": "^2.10.3"
+  }
+}
